@@ -1,0 +1,76 @@
+:root{
+  --bg1:#f7fbfb;
+  --panel: rgba(255,255,255,0.7);
+  --accent:#0f766e;
+
+  --accent-2:#0b5250;
+
+  --ink:#0b1720;
+  --muted:#4b5563;
+}
+
+*{box-sizing:border-box}
+
+html,body{height:100%}
+body{
+  /* margin:0; */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  background: radial-gradient(1200px 600px at 10% 10%, #e8fbfb 0%, transparent 10%), linear-gradient(180deg,#fbffff 0%, var(--bg1) 100%);
+  color:var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  width:min(920px,94%);
+  background:var(--panel);
+
+  padding:clamp(20px,4.5vw,44px);
+  border-radius:14px;
+  box-shadow: 0 8px 30px rgba(6,10,15,0.08);
+  backdrop-filter: blur(8px) saturate(1.05);
+}
+
+.hero{
+    display:flex;gap:18px;
+    align-items:center;margin-bottom:18px}
+
+.logo{
+ 
+ 
+    width:78px;height:78px;display:grid;place-items:center;border-radius:12px;
+  background: conic-gradient(from 200deg at 50% 50%, #e6fffb, #dff7f6 30%, #eafdfc 70%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid rgba(11,23,32,0.06);
+  position:relative;flex:0 0 auto
+}
+.bracket{
+    font-family:monospace;
+    font-weight:700;color:var(--accent-2);
+    font-size:20px}
+.dot{font-size:22px;color:var(--accent);margin:0 2px;animation:pulse 2.2s infinite}
+
+.title h1{margin:0;font-size:clamp(22px,4.5vw,36px);letter-spacing:-0.01em}
+.tagline{margin:6px 0 0;color:var(--muted);opacity:0.95}
+.cursor{display:inline-block;margin-left:8px;color:var(--accent-2);animation:blink 1.1s steps(2,end) infinite}
+
+.content{display:grid;grid-template-columns:1fr 240px;gap:22px;align-items:start}
+.content article{background:transparent}
+.content h2{margin:0 0 8px;color:var(--accent)}
+.content p{margin:0 0 12px;line-height:1.55;color:var(--muted)}
+.content ul{margin:0;padding-left:1.1rem;color:var(--muted);line-height:1.6}
+
+.note{background:linear-gradient(180deg,rgba(11,82,80,0.06),rgba(11,82,80,0.03));padding:12px;border-radius:10px;border:1px solid rgba(11,23,32,0.04);color:var(--accent-2)}
+
+.foot{margin-top:18px;text-align:center;font-size:0.95rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .content{grid-template-columns:1fr}
+  .logo{width:60px;height:60px}
+}
+
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{0%{transform:scale(0.95);opacity:0.9}50%{transform:scale(1.08);opacity:1}100%{transform:scale(0.95);opacity:0.9}}
